@@ -14,6 +14,6 @@
   "build": {
     "appId": "local.windget.youtube",
     "productName": "Widget YouTube Music",
-    "files": ["main.js"]
+    "files": ["main.js", "icon.png"]
   }
 }

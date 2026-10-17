@@ -4,4 +4,4 @@ Petite fenêtre toujours au premier plan avec YouTube Music. Les touches média 
 
 - Lancer : `npm install && npm start`
 - Fabriquer un `.exe` portable (à lancer sous Windows) : `npm run build` → `dist/`
-- Clic droit dans la fenêtre : activer/désactiver « toujours au premier plan », quitter.
+- Fermer la fenêtre la réduit dans la zone de notification (la musique continue). Clic sur l’icône : afficher/masquer ; clic droit : menu (premier plan, quitter).

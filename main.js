@@ -18,8 +18,17 @@ app.whenReady().then(() => {
   // Fermer la fenêtre la réduit dans la zone de notification (la musique continue)
   win.on('close', (e) => { if (!quitting) { e.preventDefault(); win.hide(); } });
 
+  // Pilote le lecteur web via les boutons de la barre de lecture
+  // ponytail: sélecteurs liés au HTML de YouTube Music, à adapter s'il change
+  const player = (cls) => () =>
+    win.webContents.executeJavaScript(`document.querySelector('ytmusic-player-bar .${cls}')?.click()`);
+
   const toggle = () => (win.isVisible() ? win.hide() : win.show());
   const menu = () => Menu.buildFromTemplate([
+    { label: '⏯ Lecture / Pause', click: player('play-pause-button') },
+    { label: '⏮ Précédent', click: player('previous-button') },
+    { label: '⏭ Suivant', click: player('next-button') },
+    { type: 'separator' },
     { label: 'Afficher / Masquer', click: toggle },
     { label: 'Toujours au premier plan', type: 'checkbox', checked: win.isAlwaysOnTop(),
       click: (i) => win.setAlwaysOnTop(i.checked) },

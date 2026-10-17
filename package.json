@@ -1,0 +1,19 @@
+{
+  "name": "windget-youtube",
+  "version": "1.0.0",
+  "description": "Mini widget YouTube Music pour Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "local.windget.youtube",
+    "productName": "Widget YouTube Music",
+    "files": ["main.js"]
+  }
+}
